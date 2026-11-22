@@ -1,3 +1,9 @@
+## Kiểm thử backend Phase 1
+
+Chạy `python -m pytest -q` tại root sau khi cài `backend/requirements.txt`; tests trong `backend/tests`, database tạm và mock adapter. Bao phủ seed L01=S/L02=M offline, Best-fit, allocation atomic/concurrency, dedup, auth/ownership, mã kiosk TTL/one-use và state/evidence. Chính sách hiện hành không latch sensor: đủ confirmation + cycle + CLOSED mới + LOCK_APPLIED thì hoàn tất; thiếu từng điều kiện, OPEN/UNKNOWN, stale/offline không hoàn tất. Mock không sinh ENGAGED. [Hướng dẫn](BACKEND_PHASE1.md). Không phải kết quả kiểm thử phần cứng hay CoreIOT.
+
+---
+
 # Kế hoạch kiểm thử — baseline revision 1.3
 
 Ngày 10/11/2026. **Chưa có code/test executable hoặc kết quả chức năng/HIL trong repository.** Giữ TC-01…29 và TC-16/17 tiểu mục, thêm TC-30…35 cho quyết định mới. Mọi số lần/ngưỡng đề xuất phải review; không ghi PASS thay cho BLOCKED/NOT RUN.

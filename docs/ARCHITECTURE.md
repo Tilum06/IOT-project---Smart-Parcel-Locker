@@ -1,3 +1,9 @@
+## Backend Phase 1 hiện hành
+
+Một ứng dụng PC: `backend.main` + router `api`, database `db`, services/auth/state và boundary `devices` cho Gateway nội bộ. SQLite là nguồn sự thật, BEGIN IMMEDIATE reserve atomic, không có HTTP server Gateway riêng. 2 ESP32-S3: Central 1 và Locker Node 2 quản lý L01=S/L02=M, servo 5V + MC-38, không latch sensor. Chỉ hoàn tất bằng confirmation + door cycle + CLOSED mới + LOCK_APPLIED đúng phiên/command và không lỗi/offline/unknown; không tuyên bố khóa cơ khí. [Chi tiết](BACKEND_PHASE1.md). Cấu hình này ưu tiên hơn mô tả baseline cũ bên dưới.
+
+---
+
 # Kiến trúc — baseline revision 1.3
 
 Ngày 10/11/2026. Chính sách đã duyệt theo [PROJECT_SPEC](PROJECT_SPEC.md)/[DECISIONS](DECISIONS.md); encoding, tham số và recovery chi tiết còn review. Chưa có implementation hay evidence thiết bị. Đặc tả v1.2 gốc giữ làm lịch sử; revision 1.3 đang áp dụng.

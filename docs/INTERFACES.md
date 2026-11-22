@@ -1,3 +1,9 @@
+## REST API Phase 1 đã triển khai
+
+Contract hiện hành và ví dụ tại [BACKEND_PHASE1](BACKEND_PHASE1.md); OpenAPI `/openapi.json`, Swagger `/docs`. Prefix `/api/v1`: auth login/logout; rooms/residents; lockers; deposits + confirm; kiosk-sessions; pickups + confirm; parcels + history; transactions. Bearer + role/ownership; mutation nghiệp vụ dùng X-Request-ID. Mã kiosk one-use 30s gắn parcel/resident/kiosk/session. Chỉ L01=S/L02=M, 2 ESP32-S3, servo 5V + MC-38, không latch sensor. Door snapshot mới hợp lệ và OPEN→CLOSED đúng phiên kết hợp confirmation + LOCK_APPLIED đúng command mới hoàn tất khi không lỗi/offline/unknown; kết quả servo không chứng minh chốt cơ khí. Giao thức firmware chưa tích hợp; không có endpoint HTTP nhận sensor giả. Contract Phase 1 này ưu tiên hơn baseline bên dưới.
+
+---
+
 # Hợp đồng giao tiếp — baseline revision 1.3
 
 Ngày 10/11/2026. USB Serial/JSON Lines và một ứng dụng Python/FastAPI đã được duyệt. Tài liệu này sửa draft v1 để source/target, ACK/STATUS, event và internal adapter thống nhất. **Byte layout/enum/session mechanism và tham số dưới đây là thiết kế cần DEC-01 review, chưa có implementation/test.** Không gán chữ ký A/B hoặc tuyên bố exactly-once. [DECISIONS](DECISIONS.md) phân biệt policy đã đóng và phần còn mở.

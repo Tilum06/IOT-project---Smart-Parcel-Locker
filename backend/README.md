@@ -1,3 +1,9 @@
+## Phase 1: source và cách chạy
+
+Backend đã có SQLite migration/seed, auth, API, service allocation, state/evidence và pytest. Xem [BACKEND_PHASE1](../docs/BACKEND_PHASE1.md) để setup Windows, tạo tài khoản/demo, chạy server, Swagger, pytest và contract đầy đủ. Chỉ L01=S/L02=M trên Locker Node 2, Central 1; 2 ESP32-S3. Không có cảm biến chốt. Confirmation + OPEN→CLOSED + CLOSED mới + LOCK_APPLIED đúng command, không lỗi/offline/unknown mới hoàn tất; kết quả servo không chứng minh chốt gài cơ khí. Production mặc định offline, không có API sinh bằng chứng giả. Phần này ưu tiên hơn các cấu hình baseline cũ bên dưới.
+
+---
+
 # Backend module — Python/FastAPI/SQLite revision 1.3
 
 Owner **Member B**, BE-01→BE-02→BE-03. Một app PC chứa cả Backend và Gateway, một FastAPI HTTP server; chưa có API/schema/migration/code chạy được. Không tạo microservices, broker nội bộ hoặc server Gateway riêng.

@@ -1,3 +1,9 @@
+## Backend Phase 1 đã triển khai
+
+FastAPI + SQLite: [hướng dẫn Windows, schema, API và kiểm thử](docs/BACKEND_PHASE1.md). Cấu hình Phase 1 hiện hành là **2 ESP32-S3**, **L01=S, L02=M**, servo 5V + MC-38, không latch sensor. Best-fit S→S/M, M→M; không size L. Hoàn tất cần confirmation, chu kỳ cửa đúng phiên, CLOSED mới hợp lệ và LOCK_APPLIED đúng command, không có lỗi/offline/unknown. LOCK_APPLIED chỉ chứng minh servo đã được điều khiển, không chứng minh chốt gài cơ khí. Đây là cấu hình ưu tiên hơn các mô tả baseline cũ bên dưới; tài liệu v1.2 giữ nguyên.
+
+---
+
 # Smart Parcel Locker — baseline M0 revision 1.3
 
 Ngày 10/11/2026. Nhóm 2 người, 3 ESP32-S3/YoloUNO, L01/L02=S, L03=M, L04=L. Mỗi ngăn có servo/chốt, cảm biến cửa và **microswitch xác nhận chốt gài**. Central dùng ST7789 SPI 240×240/LVGL/keypad 4×4, ESP-NOW và USB Serial.

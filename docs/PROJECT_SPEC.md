@@ -1,3 +1,9 @@
+## Bổ sung triển khai Phase 1 (hiện hành)
+
+Cấu hình ưu tiên: 2 ESP32-S3 (Central 1, Locker Node 2), 2 locker L01=S/L02=M, servo 5V + MC-38, không cảm biến chốt, không size L. FastAPI + SQLite đã có source Phase 1; [schema, API, setup và giới hạn](BACKEND_PHASE1.md). Hoàn tất gửi/nhận cần confirmation + OPEN→CLOSED đúng phiên + CLOSED mới hợp lệ + LOCK_APPLIED đúng command, không lỗi/offline/unknown. Không cần ENGAGED; LOCK_APPLIED chỉ là kết quả điều khiển servo, không xác minh chốt cơ khí. Nội dung Phase 1 này thay các mô tả cấu hình baseline cũ; v1.2 giữ lịch sử.
+
+---
+
 # Đặc tả đang áp dụng — IOT-SPL
 
 **Revision 1.3 — M0 baseline revision, 10/11/2026.** Nguồn hiện hành: các quyết định nhóm phê duyệt và tài liệu này. [v1.2 gốc](../PROJECT_SPEC_Smart_Parcel_Locker_v1.2.md) là tài liệu lịch sử, giữ nguyên; các quyết định mới ở đây thay thế nội dung cũ tương ứng. Giữ FR-01…18, NFR-01…08, Issue ID hiện có.

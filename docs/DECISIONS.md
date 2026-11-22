@@ -1,3 +1,14 @@
+## Quyết định Phase 1 bổ sung (hiện hành)
+
+- 2 ESP32-S3: Central 1, Locker Node 2; chỉ L01=S và L02=M, servo 5V + MC-38; không latch sensor/microswitch, không size L.
+- SQLite stdlib + FastAPI/Pydantic; migration user_version=1, FK bật, partial unique active transaction, BEGIN IMMEDIATE.
+- Best-fit S→S/M, M→M; cùng size ưu tiên ID tăng dần (tạm thời).
+- Hoàn tất nghiệp vụ: confirmation + OPEN→CLOSED đúng transaction + CLOSED mới hợp lệ + LOCK_APPLIED đúng command, không lỗi/offline/unknown; không cần ENGAGED. LOCK_APPLIED không chứng minh chốt gài cơ khí.
+- Seed offline; không tự online, tự giải phóng khi timeout/restart hay sinh sensor giả trong production.
+- [Contract và giới hạn Phase 1](BACKEND_PHASE1.md) ưu tiên hơn cấu hình baseline cũ; giữ nguyên tài liệu lịch sử v1.2.
+
+---
+
 # Sổ quyết định — baseline revision 1.3
 
 Ngày cập nhật 10/11/2026. Nguồn phê duyệt mới: task người dùng “Finalize M0 Baseline”, §2–4. D-ID tiếp tục theo bảng §2.2 của v1.2, không đổi sang ID ở §15 bị lệch. Đóng chính sách không đồng nghĩa đã hiện thực/đo/test. Không tự ghi reviewer A/B đã ký wire contract; phê duyệt phạm vi do người dùng cung cấp.
